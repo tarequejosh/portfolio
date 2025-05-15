@@ -13,12 +13,12 @@ This is my personal portfolio website showcasing my education, experience, proje
 - CSS3
 
 ## View Live
-You can view the live portfolio at: https://[your-github-username].github.io/portfolio/
+You can view the live portfolio at: https://tarequejosh.github.io/portfolio/
 
 ## Local Development
 To run this portfolio locally, simply clone the repository and open the `index.html` file in your web browser.
 
 ```bash
-git clone https://github.com/[your-github-username]/portfolio.git
+git clone https://github.com/tarequejosh/portfolio.git
 cd portfolio
 ``` 
