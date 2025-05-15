@@ -24,26 +24,34 @@
         }
 
         .header {
-            text-align: center;
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
             margin-bottom: 30px;
         }
 
         .profile-image {
-            width: 150px;
-            height: 180px;
+            width: 160px;
+            height: 200px;
             object-fit: cover;
             border-radius: 5px;
-            margin-bottom: 15px;
+            flex-shrink: 0;
+        }
+
+        .header-content {
+            flex: 1;
         }
 
         h1 {
             color: #2c3e50;
             margin: 0 0 10px 0;
+            font-size: 2em;
         }
 
         .contact-info {
-            margin: 15px 0;
+            margin: 10px 0;
             color: #666;
+            line-height: 1.4;
         }
 
         .contact-info a {
@@ -53,6 +61,11 @@
 
         .contact-info a:hover {
             text-decoration: underline;
+        }
+
+        .about-text {
+            margin-top: 15px;
+            line-height: 1.6;
         }
 
         .section {
@@ -112,9 +125,18 @@
             .container {
                 padding: 20px;
             }
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
             .profile-image {
-                width: 120px;
-                height: 144px;
+                width: 140px;
+                height: 175px;
+            }
+            .header-content {
+                width: 100%;
             }
             h1 {
                 font-size: 1.8em;
@@ -126,14 +148,18 @@
     <div class="container">
         <div class="header">
             <img src="images/profile.jpg" alt="Md Tareque Jamil Josh" class="profile-image">
-            <h1>Md Tareque Jamil Josh</h1>
-            <div class="contact-info">
-                <a href="mailto:m.tarequejosh@gmail.com">m.tarequejosh@gmail.com</a> |
-                +88 01744829075 |
-                <a href="https://www.linkedin.com/in/tarequejosh">LinkedIn</a> |
-                Dhaka, Bangladesh
+            <div class="header-content">
+                <h1>Md Tareque Jamil Josh</h1>
+                <div class="contact-info">
+                    <a href="mailto:m.tarequejosh@gmail.com">m.tarequejosh@gmail.com</a> |
+                    +88 01744829075 |
+                    <a href="https://www.linkedin.com/in/tarequejosh">LinkedIn</a> |
+                    Dhaka, Bangladesh
+                </div>
+                <p class="about-text">
+                    Computer Science student with expertise in C, Java, Python. Currently learning AI and Data Science for impactful solutions in healthcare, sustainability, and global challenges. With extensive experience in event management and content creation, I bring a strong interdisciplinary approach to innovating processes and engaging audiences effectively.
+                </p>
             </div>
-            <p>Computer Science student with expertise in C, Java, Python. Currently learning AI and Data Science for impactful solutions in healthcare, sustainability, and global challenges. With extensive experience in event management and content creation, I bring a strong interdisciplinary approach to innovating processes and engaging audiences effectively.</p>
         </div>
 
         <div class="section">
