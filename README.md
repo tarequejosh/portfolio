@@ -10,7 +10,7 @@ This is my personal portfolio website showcasing my education, experience, proje
 
 ## Technologies Used
 - HTML5
-- CSS3
+- CSS
 
 ## View Live
 You can view the live portfolio at: https://tarequejosh.github.io/portfolio/
