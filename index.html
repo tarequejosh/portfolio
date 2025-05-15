@@ -2,83 +2,180 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Md Tareque Jamil Josh - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Clean and Professional Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+        }
+
+        .contact-info {
+            margin: 15px 0;
+            color: #666;
+        }
+
+        .contact-info a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #34495e;
+            margin: 15px 0 5px 0;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .date {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #2980b9;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            .profile-image {
+                width: 120px;
+                height: 144px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header Section -->
-        <header>
-            <div class="profile">
-                <img src="images/profile.jpg" alt="Md Tareque Jamil Josh" class="profile-image">
-                <h1>Md Tareque Jamil Josh</h1>
-                <div class="contact-info">
-                    <a href="mailto:m.tarequejosh@gmail.com">m.tarequejosh@gmail.com</a> |
-                    <span>+88 01744829075</span> |
-                    <a href="https://www.linkedin.com/in/tarequejosh">LinkedIn</a> |
-                    <span>Dhaka, Bangladesh</span>
-                </div>
+        <div class="header">
+            <img src="images/profile.jpg" alt="Md Tareque Jamil Josh" class="profile-image">
+            <h1>Md Tareque Jamil Josh</h1>
+            <div class="contact-info">
+                <a href="mailto:m.tarequejosh@gmail.com">m.tarequejosh@gmail.com</a> |
+                +88 01744829075 |
+                <a href="https://www.linkedin.com/in/tarequejosh">LinkedIn</a> |
+                Dhaka, Bangladesh
             </div>
-            <div class="about">
-                <h2>About Me</h2>
-                <p>Computer Science student with expertise in C, Java, Python. Currently learning AI and Data Science for impactful solutions in healthcare, sustainability, and global challenges. With extensive experience in event management and content creation, I bring a strong interdisciplinary approach to innovating processes and engaging audiences effectively.</p>
-            </div>
-        </header>
+            <p>Computer Science student with expertise in C, Java, Python. Currently learning AI and Data Science for impactful solutions in healthcare, sustainability, and global challenges. With extensive experience in event management and content creation, I bring a strong interdisciplinary approach to innovating processes and engaging audiences effectively.</p>
+        </div>
 
-        <!-- Education Section -->
-        <section class="education">
+        <div class="section">
             <h2>Education</h2>
-            <div class="edu-item">
-                <h3>Daffodil International University</h3>
-                <p>BS in Computer Science and Engineering</p>
-                <p>CGPA: 3.34/4.0</p>
-                <p class="date">Jan 2023 – Present</p>
-            </div>
-            <div class="edu-item">
-                <h3>Shahid A.H.M Kamaruzzaman Govt. Degree College</h3>
-                <p>Science</p>
-                <p>GPA: 5.00/5.00</p>
-                <p class="date">April 2018 – April 2020</p>
-            </div>
-        </section>
+            <h3>Daffodil International University</h3>
+            <p>BS in Computer Science and Engineering • CGPA: 3.34/4.0</p>
+            <p class="date">Jan 2023 – Present</p>
 
-        <!-- Experience Section -->
-        <section class="experience">
+            <h3>Shahid A.H.M Kamaruzzaman Govt. Degree College</h3>
+            <p>Science • GPA: 5.00/5.00</p>
+            <p class="date">April 2018 – April 2020</p>
+        </div>
+
+        <div class="section">
             <h2>Experience</h2>
-            <div class="exp-item">
-                <h3>Intern, International Affairs, DIU</h3>
-                <p class="date">Feb 2024 – July 2024</p>
-                <p>Assisted in coordinating visits from international guests, ensuring a warm, organized, and professional experience that positively represented our institution. Took the lead in organizing Passport Week 2024, guiding students through the application process and facilitating the successful submission of over 200 passport applications.</p>
-            </div>
-        </section>
+            <h3>Intern, International Affairs, DIU</h3>
+            <p class="date">Feb 2024 – July 2024</p>
+            <p>Assisted in coordinating visits from international guests, ensuring a warm, organized, and professional experience that positively represented our institution. Took the lead in organizing Passport Week 2024, guiding students through the application process and facilitating the successful submission of over 200 passport applications.</p>
+        </div>
 
-        <!-- Projects Section -->
-        <section class="projects">
+        <div class="section">
             <h2>Projects</h2>
-            <div class="project-item">
-                <h3>ScholarMate</h3>
-                <p>A smart and intuitive Flask-based web application designed to help students seamlessly manage scholarship opportunities. Easily track deadlines, organize entries, and bookmark your top picks—all in one place.</p>
-                <ul>
-                    <li>Add detailed scholarship entries effortlessly, including requirements and deadlines</li>
-                    <li>Bookmark and prioritize scholarships that matter most to you</li>
-                    <li>Get automatic alerts for scholarships nearing their deadlines (within 30 days)</li>
-                    <li>Fully responsive design — smooth experience on mobile, tablet, and desktop</li>
-                </ul>
-                <a href="https://github.com/tarequejosh/ScholarMate" class="project-link">GitHub Repository</a>
-            </div>
-            <div class="project-item">
-                <h3>Task Management System</h3>
-                <p class="date">Oct 2024</p>
-                <ul>
-                    <li>Tools: Java, Spring Boot, H2 DB, Bootstrap</li>
-                    <li>Created a system to organize, update, and track tasks with due dates and status</li>
-                </ul>
-                <a href="https://github.com/tarequejosh/task-management-system" class="project-link">GitHub Repository</a>
-            </div>
-        </section>
+            <h3>ScholarMate</h3>
+            <p>A smart and intuitive Flask-based web application designed to help students seamlessly manage scholarship opportunities. Easily track deadlines, organize entries, and bookmark your top picks—all in one place.</p>
+            <ul>
+                <li>Add detailed scholarship entries effortlessly, including requirements and deadlines</li>
+                <li>Bookmark and prioritize scholarships that matter most to you</li>
+                <li>Get automatic alerts for scholarships nearing their deadlines (within 30 days)</li>
+                <li>Fully responsive design — smooth experience on mobile, tablet, and desktop</li>
+            </ul>
+            <a href="https://github.com/tarequejosh/ScholarMate" class="project-link">GitHub Repository</a>
 
-        <!-- Goals Section -->
-        <section class="goals">
+            <h3>Task Management System</h3>
+            <p class="date">Oct 2024</p>
+            <ul>
+                <li>Tools: Java, Spring Boot, H2 DB, Bootstrap</li>
+                <li>Created a system to organize, update, and track tasks with due dates and status</li>
+            </ul>
+            <a href="https://github.com/tarequejosh/task-management-system" class="project-link">GitHub Repository</a>
+        </div>
+
+        <div class="section">
             <h2>Goals</h2>
             <ul>
                 <li>Learn Spring Boot, API integration, Spring MVC, JPA/Hibernate, Spring Security, and testing</li>
@@ -87,24 +184,18 @@
                 <li>Build a Spring-based real-world web app within two months</li>
                 <li>In the next 6 months, integrating ML and development knowledge into a project that is both practical and impactful</li>
             </ul>
-        </section>
+        </div>
 
-        <!-- Certifications Section -->
-        <section class="certifications">
+        <div class="section">
             <h2>Certifications</h2>
-            <div class="cert-item">
-                <h3>CS50x: Introduction to Computer Science (edX)</h3>
-                <p>Covered C, Python, and deep foundational CS knowledge</p>
-            </div>
-        </section>
+            <h3>CS50x: Introduction to Computer Science (edX)</h3>
+            <p>Covered C, Python, and deep foundational CS knowledge</p>
+        </div>
 
-        <!-- Contests Section -->
-        <section class="contests">
+        <div class="section">
             <h2>Contests</h2>
-            <div class="contest-item">
-                <p>Unlock The Algorithm Spring 2024, C Slot – 25th Position</p>
-            </div>
-        </section>
+            <p>Unlock The Algorithm Spring 2024, C Slot – 25th Position</p>
+        </div>
     </div>
 </body>
 </html>
