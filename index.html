@@ -81,11 +81,13 @@
         h2 {
             color: #2c3e50;
             margin-bottom: 15px;
+            font-size: 1.5em;
         }
 
         h3 {
             color: #34495e;
             margin: 15px 0 5px 0;
+            font-size: 1.2em;
         }
 
         p {
@@ -118,28 +120,128 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 600px) {
+        /* Enhanced Mobile Styles */
+        @media (max-width: 768px) {
             body {
                 padding: 10px;
             }
+            
             .container {
-                padding: 20px;
+                padding: 15px;
             }
+
             .header {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
                 gap: 20px;
             }
+
             .profile-image {
                 width: 140px;
                 height: 175px;
             }
+
             .header-content {
                 width: 100%;
             }
+
             h1 {
                 font-size: 1.8em;
+            }
+
+            .contact-info {
+                font-size: 0.95em;
+                margin: 15px 0;
+            }
+
+            .about-text {
+                font-size: 0.95em;
+                margin-top: 20px;
+            }
+        }
+
+        /* Additional Mobile Optimizations */
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            .container {
+                padding: 12px;
+            }
+
+            .header {
+                gap: 15px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 150px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            .contact-info {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
+
+            .about-text {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
+
+            .section {
+                padding-bottom: 15px;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                padding-left: 15px;
+            }
+
+            li {
+                margin-bottom: 6px;
+                font-size: 0.95em;
+            }
+
+            .date {
+                font-size: 0.85em;
+            }
+
+            .project-link {
+                font-size: 0.95em;
+            }
+        }
+
+        /* Small Phone Optimization */
+        @media (max-width: 360px) {
+            .profile-image {
+                width: 100px;
+                height: 125px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            .contact-info {
+                font-size: 0.85em;
+            }
+
+            .about-text {
+                font-size: 0.85em;
             }
         }
     </style>
