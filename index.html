@@ -1,99 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Md Tareque Jamil Josh - Portfolio</title>
     <style>
-        /* Clean and Professional Styling */
+        /* Basic reset and font */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: Arial;
             margin: 0;
             padding: 20px;
             background-color: #f5f5f5;
             color: #333;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        .header {
-            display: flex;
-            align-items: flex-start;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .profile-image {
-            width: 160px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-            flex-shrink: 0;
-        }
-
-        .header-content {
-            flex: 1;
-        }
-
-        h1 {
-            color: #2c3e50;
-            margin: 0 0 10px 0;
-            font-size: 2em;
-        }
-
-        .contact-info {
-            margin: 10px 0;
-            color: #666;
-            line-height: 1.4;
-        }
-
-        .contact-info a {
-            color: #2980b9;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .about-text {
-            margin-top: 15px;
             line-height: 1.6;
         }
 
-        .section {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+        /* Main container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
 
-        .section:last-child {
-            border-bottom: none;
+        /* Header section */
+        .header {
+            display: flex;
+            margin-bottom: 30px;
+            gap: 30px;
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 200px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .info {
+            flex: 1;
+        }
+
+        /* Typography */
+        h1 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 28px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
         }
 
         h2 {
             color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.5em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 25px;
         }
 
-        h3 {
-            color: #34495e;
-            margin: 15px 0 5px 0;
-            font-size: 1.2em;
+        /* Links */
+        a {
+            color: #3498db;
+            text-decoration: none;
         }
 
-        p {
-            margin: 5px 0;
+        a:hover {
+            text-decoration: underline;
         }
 
+        /* Sections */
+        .section {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+        }
+
+        /* Lists */
         ul {
             padding-left: 20px;
             margin: 10px 0;
@@ -103,145 +83,26 @@
             margin-bottom: 8px;
         }
 
-        .date {
-            color: #666;
-            font-style: italic;
-            font-size: 0.9em;
-        }
-
+        /* Project links */
         .project-link {
             display: inline-block;
-            color: #2980b9;
-            text-decoration: none;
-            margin-top: 5px;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
         }
 
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Enhanced Mobile Styles */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                padding: 15px;
-            }
-
+        /* Mobile view */
+        @media (max-width: 600px) {
             .header {
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
                 gap: 20px;
             }
-
-            .profile-image {
-                width: 140px;
-                height: 175px;
+            .profile-pic {
+                margin: 0 auto;
             }
-
-            .header-content {
-                width: 100%;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .contact-info {
-                font-size: 0.95em;
-                margin: 15px 0;
-            }
-
-            .about-text {
-                font-size: 0.95em;
-                margin-top: 20px;
-            }
-        }
-
-        /* Additional Mobile Optimizations */
-        @media (max-width: 480px) {
-            body {
-                padding: 5px;
-            }
-
             .container {
-                padding: 12px;
-            }
-
-            .header {
-                gap: 15px;
-            }
-
-            .profile-image {
-                width: 120px;
-                height: 150px;
-            }
-
-            h1 {
-                font-size: 1.6em;
-            }
-
-            h2 {
-                font-size: 1.3em;
-            }
-
-            h3 {
-                font-size: 1.1em;
-            }
-
-            .contact-info {
-                font-size: 0.9em;
-                line-height: 1.5;
-            }
-
-            .about-text {
-                font-size: 0.9em;
-                line-height: 1.5;
-            }
-
-            .section {
-                padding-bottom: 15px;
-                margin-bottom: 20px;
-            }
-
-            ul {
-                padding-left: 15px;
-            }
-
-            li {
-                margin-bottom: 6px;
-                font-size: 0.95em;
-            }
-
-            .date {
-                font-size: 0.85em;
-            }
-
-            .project-link {
-                font-size: 0.95em;
-            }
-        }
-
-        /* Small Phone Optimization */
-        @media (max-width: 360px) {
-            .profile-image {
-                width: 100px;
-                height: 125px;
-            }
-
-            h1 {
-                font-size: 1.4em;
-            }
-
-            .contact-info {
-                font-size: 0.85em;
-            }
-
-            .about-text {
-                font-size: 0.85em;
+                padding: 20px;
             }
         }
     </style>
@@ -249,16 +110,16 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="images/profile.jpg" alt="Md Tareque Jamil Josh" class="profile-image">
-            <div class="header-content">
+            <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="info">
                 <h1>Md Tareque Jamil Josh</h1>
-                <div class="contact-info">
-                    <a href="mailto:m.tarequejosh@gmail.com">m.tarequejosh@gmail.com</a> |
-                    +88 01744829075 |
-                    <a href="https://www.linkedin.com/in/tarequejosh">LinkedIn</a> |
+                <p>
+                    <a href="mailto:m.tarequejosh@gmail.com">m.tarequejosh@gmail.com</a> | 
+                    +88 01744829075 | 
+                    <a href="https://www.linkedin.com/in/tarequejosh">LinkedIn</a> | 
                     Dhaka, Bangladesh
-                </div>
-                <p class="about-text">
+                </p>
+                <p>
                     Computer Science student with expertise in C, Java, Python. Currently learning AI and Data Science for impactful solutions in healthcare, sustainability, and global challenges. With extensive experience in event management and content creation, I bring a strong interdisciplinary approach to innovating processes and engaging audiences effectively.
                 </p>
             </div>
@@ -266,39 +127,39 @@
 
         <div class="section">
             <h2>Education</h2>
-            <h3>Daffodil International University</h3>
-            <p>BS in Computer Science and Engineering • CGPA: 3.34/4.0</p>
-            <p class="date">Jan 2023 – Present</p>
+            <p><strong>Daffodil International University</strong><br>
+            BS in Computer Science and Engineering • CGPA: 3.34/4.0<br>
+            Jan 2023 – Present</p>
 
-            <h3>Shahid A.H.M Kamaruzzaman Govt. Degree College</h3>
-            <p>Science • GPA: 5.00/5.00</p>
-            <p class="date">April 2018 – April 2020</p>
+            <p><strong>Shahid A.H.M Kamaruzzaman Govt. Degree College</strong><br>
+            Science • GPA: 5.00/5.00<br>
+            April 2018 – April 2020</p>
         </div>
 
         <div class="section">
             <h2>Experience</h2>
-            <h3>Intern, International Affairs, DIU</h3>
-            <p class="date">Feb 2024 – July 2024</p>
+            <p><strong>Intern, International Affairs, DIU</strong><br>
+            Feb 2024 – July 2024</p>
             <p>Assisted in coordinating visits from international guests, ensuring a warm, organized, and professional experience that positively represented our institution. Took the lead in organizing Passport Week 2024, guiding students through the application process and facilitating the successful submission of over 200 passport applications.</p>
         </div>
 
         <div class="section">
             <h2>Projects</h2>
-            <h3>ScholarMate</h3>
-            <p>A smart and intuitive Flask-based web application designed to help students seamlessly manage scholarship opportunities. Easily track deadlines, organize entries, and bookmark your top picks—all in one place.</p>
+            <p><strong>ScholarMate</strong></p>
+            <p>A smart and intuitive Flask-based web application designed to help students seamlessly manage scholarship opportunities.</p>
             <ul>
-                <li>Add detailed scholarship entries effortlessly, including requirements and deadlines</li>
-                <li>Bookmark and prioritize scholarships that matter most to you</li>
-                <li>Get automatic alerts for scholarships nearing their deadlines (within 30 days)</li>
-                <li>Fully responsive design — smooth experience on mobile, tablet, and desktop</li>
+                <li>Add detailed scholarship entries effortlessly</li>
+                <li>Bookmark and prioritize scholarships</li>
+                <li>Get automatic alerts for deadlines</li>
+                <li>Fully responsive design</li>
             </ul>
             <a href="https://github.com/tarequejosh/ScholarMate" class="project-link">GitHub Repository</a>
 
-            <h3>Task Management System</h3>
-            <p class="date">Oct 2024</p>
+            <p><strong>Task Management System</strong><br>
+            Oct 2024</p>
             <ul>
                 <li>Tools: Java, Spring Boot, H2 DB, Bootstrap</li>
-                <li>Created a system to organize, update, and track tasks with due dates and status</li>
+                <li>Created a system to organize and track tasks</li>
             </ul>
             <a href="https://github.com/tarequejosh/task-management-system" class="project-link">GitHub Repository</a>
         </div>
@@ -306,18 +167,18 @@
         <div class="section">
             <h2>Goals</h2>
             <ul>
-                <li>Learn Spring Boot, API integration, Spring MVC, JPA/Hibernate, Spring Security, and testing</li>
-                <li>Gain HTML, CSS, JavaScript, responsive design, React.js/Angular, and API experience</li>
-                <li>Master authentication, MySQL/PostgreSQL, Git/GitHub, Maven/Gradle</li>
-                <li>Build a Spring-based real-world web app within two months</li>
-                <li>In the next 6 months, integrating ML and development knowledge into a project that is both practical and impactful</li>
+                <li>Learn Spring Boot, API integration, Spring MVC</li>
+                <li>Gain HTML, CSS, JavaScript experience</li>
+                <li>Master authentication, MySQL/PostgreSQL</li>
+                <li>Build a Spring-based web app</li>
+                <li>Integrate ML and development knowledge</li>
             </ul>
         </div>
 
         <div class="section">
             <h2>Certifications</h2>
-            <h3>CS50x: Introduction to Computer Science (edX)</h3>
-            <p>Covered C, Python, and deep foundational CS knowledge</p>
+            <p><strong>CS50x: Introduction to Computer Science (edX)</strong><br>
+            Covered C, Python, and deep foundational CS knowledge</p>
         </div>
 
         <div class="section">
