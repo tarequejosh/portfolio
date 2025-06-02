@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #2563eb;
@@ -16,6 +17,8 @@
             --background: #f8fafc;
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
+            --gradient-start: #2563eb;
+            --gradient-end: #1e40af;
         }
 
         * {
@@ -28,41 +31,32 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--background);
             color: var(--text-color);
-            line-height: 1.6;
-            background-image: 
-                radial-gradient(at 40% 20%, hsla(220,100%,90%,0.1) 0px, transparent 50%),
-                radial-gradient(at 80% 0%, hsla(220,100%,90%,0.1) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, hsla(220,100%,90%,0.1) 0px, transparent 50%);
-            background-attachment: fixed;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
 
         .container {
             max-width: 900px;
-            margin: 2rem auto;
+            margin: 1rem auto;
             background-color: var(--card-bg);
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         .header {
             display: flex;
-            margin-bottom: 2rem;
-            gap: 2rem;
+            margin-bottom: 1.5rem;
+            gap: 1.5rem;
             align-items: start;
         }
 
         .profile-pic {
-            width: 140px;
-            height: 180px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            width: 120px;
+            height: 150px;
+            border-radius: 8px;
             object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.02);
+            border: 2px solid var(--card-bg);
         }
 
         .info {
@@ -70,116 +64,104 @@
         }
 
         .contact-info {
-            font-size: 0.9rem;
-            margin: 0.5rem 0;
+            font-size: 0.85rem;
+            margin: 0.25rem 0;
             color: var(--light-text);
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
         }
 
         .intro-text {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 1rem 0;
-            color: var(--light-text);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0.5rem 0;
+            color: var(--text-color);
         }
 
         h1 {
             color: var(--text-color);
-            font-size: 2rem;
+            font-size: 1.75rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 2px;
+            margin-bottom: 0.25rem;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         h2 {
             color: var(--text-color);
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin: 1.5rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        a:hover {
-            color: var(--secondary-color);
+            margin: 1rem 0 0.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .section {
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-        }
-
-        .section p {
-            margin: 0.75rem 0;
-            font-size: 0.95rem;
-            color: var(--light-text);
-            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
         .experience-item {
-            margin-bottom: 1.5rem;
-            padding-left: 1rem;
-            border-left: 2px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .experience-item:hover {
-            border-left-color: var(--primary-color);
-            padding-left: 1.25rem;
+            margin-bottom: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 6px;
+            background: var(--background);
+            border: 1px solid var(--border-color);
         }
 
         .experience-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .experience-title {
             font-weight: 600;
             color: var(--text-color);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
         }
 
         .experience-date {
             color: var(--light-text);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            background: var(--card-bg);
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
         }
 
         .experience-location {
             color: var(--light-text);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
         }
 
         .experience-description {
-            margin-left: 0;
-            list-style: none;
+            margin: 0;
             padding: 0;
+            list-style: none;
         }
 
         .experience-description li {
-            margin: 0.5rem 0;
+            margin: 0.25rem 0;
             position: relative;
-            padding-left: 1.25rem;
+            padding-left: 1rem;
             color: var(--light-text);
+            font-size: 0.85rem;
         }
 
         .experience-description li::before {
@@ -187,86 +169,30 @@
             color: var(--primary-color);
             position: absolute;
             left: 0;
-            font-weight: bold;
-        }
-
-        .project-section {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .project-card {
-            background: var(--background);
-            padding: 1.25rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-card strong {
-            display: block;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 0.75rem;
-        }
-
-        .project-link {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: background-color 0.2s ease;
-        }
-
-        .project-link:hover {
-            background-color: var(--secondary-color);
-            text-decoration: none;
         }
 
         .skills-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.5rem;
         }
 
         .skill-category {
-            flex: 1;
-            min-width: 250px;
             background: var(--background);
-            padding: 1.25rem;
-            border-radius: 8px;
+            padding: 0.75rem;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            border-color: var(--primary-color);
         }
 
         .skill-category h3 {
             color: var(--primary-color);
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
         }
 
         .skill-list {
@@ -277,73 +203,68 @@
 
         .skill-item {
             background: var(--card-bg);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
             color: var(--text-color);
             border: 1px solid var(--border-color);
-            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
         }
 
-        .skill-item:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .achievement-item {
+        .project-card {
             background: var(--background);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+            margin-bottom: 0.75rem;
         }
 
-        .achievement-item:hover {
-            transform: translateX(5px);
-            border-color: var(--primary-color);
-        }
-
-        .achievement-title {
-            font-weight: 600;
+        .project-card strong {
+            font-size: 0.95rem;
             color: var(--text-color);
+            display: block;
             margin-bottom: 0.25rem;
         }
 
-        .achievement-detail {
-            color: var(--light-text);
-            font-size: 0.9rem;
+        .project-links {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         @media (max-width: 768px) {
             .container {
-                margin: 1rem;
-                padding: 1.5rem;
+                margin: 0.5rem;
+                padding: 1rem;
             }
             
             .header {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                gap: 1rem;
             }
 
-            .profile-pic {
-                margin: 0 auto;
-            }
-
-            h1::after {
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
+            .contact-info {
+                justify-content: center;
             }
 
             .project-links {
                 flex-direction: column;
-            }
-
-            .skill-category {
-                min-width: 100%;
             }
         }
     </style>
@@ -355,186 +276,132 @@
             <div class="info">
                 <h1>Md Tareque Jamil Josh</h1>
                 <p class="contact-info">
-                    <a href="mailto:m.tarequejosh@gmail.com">m.tarequejosh@gmail.com</a> | 
-                    +88 01744829075 | 
-                    <a href="https://www.linkedin.com/in/tarequejosh">LinkedIn</a> | 
-                    Dhaka, Bangladesh
+                    <a href="mailto:m.tarequejosh@gmail.com"><i class="fas fa-envelope"></i> m.tarequejosh@gmail.com</a>
+                    <a href="tel:+8801744829075"><i class="fas fa-phone"></i> +88 01744829075</a>
+                    <a href="https://www.linkedin.com/in/tarequejosh"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</a>
                 </p>
                 <p class="intro-text">
-                    Computer Science student with expertise in C, Java, Python. Currently learning AI and Data Science for impactful solutions in healthcare, sustainability, and global challenges. With extensive experience in event management and content creation, I bring a strong interdisciplinary approach to innovating processes and engaging audiences effectively.
+                    Computer Science student with expertise in Java, Python, and web development. Experienced in event management, content creation, and administrative support. Currently focused on building scalable web applications and exploring AI/ML technologies.
                 </p>
             </div>
         </div>
 
         <div class="section">
-            <h2>Professional Summary</h2>
-            <p>Detail-oriented and proactive Executive Assistant candidate with a background in Computer Science and strong organizational, communication, and multitasking skills. Experienced in managing high-level academic and international events, coordinating schedules, facilitating communication, and supporting cross-functional teams. Known for a disciplined work ethic, adaptability, and a tech-savvy approach to problem-solving.</p>
-        </div>
-
-        <div class="section">
-            <h2>Education</h2>
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
             <div class="experience-item">
                 <div class="experience-header">
                     <span class="experience-title">Daffodil International University</span>
                     <span class="experience-date">Jan 2023 - Present</span>
                 </div>
-                <div class="experience-location">📍 Dhaka, Bangladesh</div>
+                <div class="experience-location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
                 <p>BSc in Computer Science & Engineering • CGPA: 3.50/4.00</p>
             </div>
-
             <div class="experience-item">
                 <div class="experience-header">
                     <span class="experience-title">Shahid A.H.M Kamaruzzaman Govt. Degree College</span>
-                    <span class="experience-date">Apr 2018 – Apr 2020</span>
+                    <span class="experience-date">2018 - 2020</span>
                 </div>
-                <div class="experience-location">📍 Rajshahi, Bangladesh</div>
+                <div class="experience-location"><i class="fas fa-map-marker-alt"></i> Rajshahi, Bangladesh</div>
                 <p>HSC, Science • GPA: 5.00/5.00</p>
             </div>
         </div>
 
         <div class="section">
-            <h2>Experience</h2>
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
             <div class="experience-item">
                 <div class="experience-header">
                     <span class="experience-title">Intern – International Affairs, DIU</span>
                     <span class="experience-date">Feb 2024 - Jul 2024</span>
                 </div>
-                <div class="experience-location">📍 Dhaka, Bangladesh</div>
+                <div class="experience-location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
                 <ul class="experience-description">
-                    <li>Assisted with protocol and logistics for visits by international delegations</li>
-                    <li>Took ownership of Passport Week 2024, coordinating the event and facilitating over 200 successful passport applications</li>
-                    <li>Managed communications and scheduling between departments, ensuring seamless coordination</li>
-                    <li>Demonstrated excellent time management and event planning under pressure</li>
+                    <li>Coordinated international delegations and managed Passport Week 2024</li>
+                    <li>Facilitated 200+ passport applications and handled cross-department communication</li>
+                    <li>Managed executive calendars and prepared briefing materials</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
-                    <span class="experience-title">Content & Event Coordinator – Computer & Programming Club (CPC), DIU</span>
+                    <span class="experience-title">Content & Event Coordinator – CPC, DIU</span>
                     <span class="experience-date">2023 - Present</span>
                 </div>
-                <div class="experience-location">📍 Dhaka, Bangladesh</div>
+                <div class="experience-location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
                 <ul class="experience-description">
-                    <li>Organized national programming contests and workshops</li>
-                    <li>Created impactful content and promotional materials for events and social media</li>
-                    <li>Acted as liaison between student teams, university administration, and sponsors</li>
-                    <li>Maintained schedules, tracked progress, and ensured smooth execution of multi-day events</li>
+                    <li>Organized national programming contests and managed event logistics</li>
+                    <li>Created promotional content and coordinated with sponsors</li>
+                    <li>Led team of 15 members in organizing tech workshops</li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
-            <h2>Skills</h2>
+            <h2><i class="fas fa-code"></i> Skills</h2>
             <div class="skills-section">
                 <div class="skill-category">
-                    <h3>Technical Expertise</h3>
+                    <h3><i class="fas fa-laptop-code"></i> Technical</h3>
                     <div class="skill-list">
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">C</span>
-                        <span class="skill-item">Spring Boot</span>
-                        <span class="skill-item">HTML/CSS</span>
-                        <span class="skill-item">Bootstrap</span>
-                        <span class="skill-item">H2 Database</span>
+                        <span class="skill-item"><i class="fab fa-java"></i> Java</span>
+                        <span class="skill-item"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-item"><i class="fas fa-leaf"></i> Spring Boot</span>
+                        <span class="skill-item"><i class="fas fa-flask"></i> Flask</span>
+                        <span class="skill-item"><i class="fab fa-html5"></i> HTML/CSS</span>
+                        <span class="skill-item"><i class="fas fa-database"></i> SQL</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Development Tools</h3>
+                    <h3><i class="fas fa-palette"></i> Creative</h3>
                     <div class="skill-list">
-                        <span class="skill-item">VS Code</span>
-                        <span class="skill-item">IntelliJ IDEA</span>
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">GitHub</span>
-                        <span class="skill-item">GCC</span>
+                        <span class="skill-item"><i class="fas fa-video"></i> Video Editing</span>
+                        <span class="skill-item"><i class="fas fa-film"></i> DaVinci Resolve</span>
+                        <span class="skill-item"><i class="fas fa-cut"></i> CapCut</span>
+                        <span class="skill-item"><i class="fas fa-paint-brush"></i> Canva</span>
+                        <span class="skill-item"><i class="fas fa-camera"></i> Content Creation</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Creative & Media</h3>
+                    <h3><i class="fas fa-users"></i> Professional</h3>
                     <div class="skill-list">
-                        <span class="skill-item">Canva</span>
-                        <span class="skill-item">CapCut</span>
-                        <span class="skill-item">DaVinci Resolve</span>
-                        <span class="skill-item">Google Sites</span>
-                        <span class="skill-item">Content Creation</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Productivity Tools</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Google Workspace</span>
-                        <span class="skill-item">MS Office Suite</span>
-                        <span class="skill-item">Trello</span>
-                        <span class="skill-item">Notion</span>
-                        <span class="skill-item">Google Calendar</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Professional Skills</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Event Management</span>
-                        <span class="skill-item">Team Leadership</span>
-                        <span class="skill-item">Project Management</span>
-                        <span class="skill-item">Communication</span>
-                        <span class="skill-item">Problem Solving</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Time Management</span>
-                        <span class="skill-item">Multitasking</span>
-                        <span class="skill-item">Adaptability</span>
-                        <span class="skill-item">Team Collaboration</span>
-                        <span class="skill-item">Continuous Learning</span>
+                        <span class="skill-item"><i class="fas fa-calendar-check"></i> Event Management</span>
+                        <span class="skill-item"><i class="fas fa-tasks"></i> Project Management</span>
+                        <span class="skill-item"><i class="fas fa-user-tie"></i> Team Leadership</span>
+                        <span class="skill-item"><i class="fas fa-comments"></i> Communication</span>
+                        <span class="skill-item"><i class="fas fa-presentation"></i> Presentation</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2>Projects</h2>
+            <h2><i class="fas fa-project-diagram"></i> Projects</h2>
             <div class="project-card">
                 <strong>ScholarMate – Scholarship Management System</strong>
-                <p>Sept 2023 | Tools: Flask, SQLite, HTML/CSS, Bootstrap</p>
-                <p>Built a web application for managing scholarship opportunities with deadline alerts and bookmarking features. Implemented user authentication and responsive design for seamless access across devices.</p>
+                <p>Sept 2023 | Flask, SQLite, HTML/CSS, Bootstrap</p>
+                <p>Web application for managing scholarships with deadline alerts and bookmarking features.</p>
                 <div class="project-links">
-                    <a href="https://github.com/tarequejosh/scholar-mate" class="project-link">GitHub Repository</a>
+                    <a href="https://github.com/tarequejosh/scholar-mate" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <strong>VocabSmart – English Vocabulary Tutor</strong>
-                <p>Sept 2023 | Tools: C, VS Code</p>
-                <p>Built a terminal-based vocabulary app using spaced repetition and Pomodoro technique. Managed development timeline and team coordination.</p>
+                <p>Sept 2023 | C, VS Code</p>
+                <p>Terminal-based vocabulary app using spaced repetition and Pomodoro technique.</p>
                 <div class="project-links">
-                    <a href="https://sites.google.com/diu.edu.bd/mightymaverics/thoughts" class="project-link">Project Site</a>
-                    <a href="https://github.com/tarequejosh/vocab-smart" class="project-link">GitHub Repository</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <strong>Task Management System – Web App</strong>
-                <p>Oct 2024 (Ongoing) | Tools: Java, Spring Boot, H2, Bootstrap</p>
-                <p>Currently building a user-friendly task organizer with authentication and CRUD features. Managing deadlines and collaborating using GitHub.</p>
-                <div class="project-links">
-                    <a href="https://github.com/tarequejosh/task-management-system" class="project-link">GitHub Repository</a>
+                    <a href="https://github.com/tarequejosh/vocab-smart" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2>Achievements</h2>
-            <div class="achievement-item">
-                <div class="achievement-title">Unlock The Algorithm – Spring 2024 Contest</div>
-                <div class="achievement-detail">C Slot – Secured 25th position among university-level participants</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Certifications</h2>
-            <div class="achievement-item">
-                <div class="achievement-title">CS50x: Introduction to Computer Science – Harvard/edX</div>
-                <div class="achievement-detail">Strong foundation in structured problem solving and programming logic</div>
+            <h2><i class="fas fa-trophy"></i> Achievements</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Unlock The Algorithm – Spring 2024</span>
+                    <span class="experience-date">2024</span>
+                </div>
+                <p>25th position among university-level participants</p>
             </div>
         </div>
     </div>
