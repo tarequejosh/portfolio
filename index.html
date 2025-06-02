@@ -1,119 +1,349 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Md Tareque Jamil Josh - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial;
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-text: #6b7280;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
             margin: 0;
-            padding: 15px;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.4;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(at 40% 20%, hsla(220,100%,90%,0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(220,100%,90%,0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(220,100%,90%,0.1) 0px, transparent 50%);
+            background-attachment: fixed;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
         }
 
         .header {
             display: flex;
-            margin-bottom: 20px;
-            gap: 20px;
+            margin-bottom: 2rem;
+            gap: 2rem;
+            align-items: start;
         }
 
         .profile-pic {
-            width: 120px;
-            height: 160px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 140px;
+            height: 180px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.02);
         }
 
         .info {
             flex: 1;
-            padding-top: 5px;
         }
 
         .contact-info {
-            font-size: 13px;
-            margin: 5px 0;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+            color: var(--light-text);
         }
 
         .intro-text {
-            font-size: 14px;
-            line-height: 1.4;
-            margin: 5px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 1rem 0;
+            color: var(--light-text);
         }
 
         h1 {
-            color: #2c3e50;
-            margin-top: 0;
-            font-size: 24px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
+            color: var(--text-color);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
         h2 {
-            color: #2c3e50;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-            margin-top: 15px;
-            font-size: 18px;
+            color: var(--text-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
         }
 
         a {
-            color: #3498db;
+            color: var(--primary-color);
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: var(--secondary-color);
         }
 
         .section {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
         }
 
         .section p {
-            margin: 5px 0;
-            font-size: 14px;
+            margin: 0.75rem 0;
+            font-size: 0.95rem;
+            color: var(--light-text);
+            line-height: 1.6;
         }
 
-        .project-section p {
-            font-size: 13px;
-            margin: 3px 0;
+        .experience-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border-color);
+            transition: all 0.3s ease;
         }
 
-        .project-section strong {
-            font-size: 14px;
+        .experience-item:hover {
+            border-left-color: var(--primary-color);
+            padding-left: 1.25rem;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .experience-date {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        .experience-location {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-description {
+            margin-left: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-description li {
+            margin: 0.5rem 0;
+            position: relative;
+            padding-left: 1.25rem;
+            color: var(--light-text);
+        }
+
+        .experience-description li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .project-section {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--background);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
         }
 
         .project-link {
             display: inline-block;
-            margin-top: 5px;
-            padding: 3px 8px;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-            font-size: 12px;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
         }
 
-        @media (max-width: 600px) {
+        .project-link:hover {
+            background-color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .skills-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+            background: var(--background);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary-color);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: var(--card-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .skill-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .achievement-item {
+            background: var(--background);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            transform: translateX(5px);
+            border-color: var(--primary-color);
+        }
+
+        .achievement-title {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .achievement-detail {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
             .header {
                 flex-direction: column;
-                gap: 15px;
+                align-items: center;
+                text-align: center;
             }
+
             .profile-pic {
                 margin: 0 auto;
             }
-            .container {
-                padding: 15px;
+
+            h1::after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .skill-category {
+                min-width: 100%;
             }
         }
     </style>
@@ -137,59 +367,175 @@
         </div>
 
         <div class="section">
-            <h2>Education</h2>
-            <p><strong>Daffodil International University</strong><br>
-            BS in Computer Science and Engineering &bull; CGPA: 3.34/4.0<br>
-            Jan 2023 &ndash; Present</p>
+            <h2>Professional Summary</h2>
+            <p>Detail-oriented and proactive Executive Assistant candidate with a background in Computer Science and strong organizational, communication, and multitasking skills. Experienced in managing high-level academic and international events, coordinating schedules, facilitating communication, and supporting cross-functional teams. Known for a disciplined work ethic, adaptability, and a tech-savvy approach to problem-solving.</p>
+        </div>
 
-            <p><strong>Shahid A.H.M Kamaruzzaman Govt. Degree College</strong><br>
-            Science &bull; GPA: 5.00/5.00<br>
-            April 2018 &ndash; April 2020</p>
+        <div class="section">
+            <h2>Education</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Daffodil International University</span>
+                    <span class="experience-date">Jan 2023 - Present</span>
+                </div>
+                <div class="experience-location">📍 Dhaka, Bangladesh</div>
+                <p>BSc in Computer Science & Engineering • CGPA: 3.50/4.00</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Shahid A.H.M Kamaruzzaman Govt. Degree College</span>
+                    <span class="experience-date">Apr 2018 – Apr 2020</span>
+                </div>
+                <div class="experience-location">📍 Rajshahi, Bangladesh</div>
+                <p>HSC, Science • GPA: 5.00/5.00</p>
+            </div>
         </div>
 
         <div class="section">
             <h2>Experience</h2>
-            <p><strong>Intern, International Affairs, DIU</strong><br>
-            Feb 2024 &ndash; July 2024</p>
-            <p>Coordinated international guest visits and led Passport Week 2024, facilitating over 200 passport applications.</p>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Intern – International Affairs, DIU</span>
+                    <span class="experience-date">Feb 2024 - Jul 2024</span>
+                </div>
+                <div class="experience-location">📍 Dhaka, Bangladesh</div>
+                <ul class="experience-description">
+                    <li>Assisted with protocol and logistics for visits by international delegations</li>
+                    <li>Took ownership of Passport Week 2024, coordinating the event and facilitating over 200 successful passport applications</li>
+                    <li>Managed communications and scheduling between departments, ensuring seamless coordination</li>
+                    <li>Demonstrated excellent time management and event planning under pressure</li>
+                </ul>
+            </div>
 
-            <p><strong>Digital Content Creator, Computer & Programming Club, DIU</strong><br>
-            Jan 2024 &ndash; Feb 2025</p>
-            <p>Created promotional content for national tech events (ICPC, BDOI, NGPC), contributing to record-high participation.</p>
-        </div>
-
-        <div class="section project-section">
-            <h2>Projects</h2>
-            <p><strong>VocabSmart - Language Learning Application</strong><br>
-            Data Structure Course Project &bull; Sept 2023</p>
-            <p>A console-based application implementing spaced repetition and Pomodoro techniques for effective language learning.</p>
-            <a href="https://sites.google.com/diu.edu.bd/mightymaverics/thoughts" class="project-link">Project Site</a>
-            <a href="https://github.com/tarequejosh/vocab-smart" class="project-link">GitHub Repository</a>
-
-            <p><strong>ScholarMate - Scholarship Management System</strong></p>
-            <p>Flask-based web application for managing scholarship opportunities with deadline alerts and bookmarking features.</p>
-            <a href="https://github.com/tarequejosh/scholar-mate" class="project-link">GitHub Repository</a>
-
-            <p><strong>Task Management System</strong><br>
-            Oct 2024</p>
-            <p>Java-based task organization system built with Spring Boot and Bootstrap.</p>
-            <a href="https://github.com/tarequejosh/task-management-system" class="project-link">GitHub Repository</a>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Content & Event Coordinator – Computer & Programming Club (CPC), DIU</span>
+                    <span class="experience-date">2023 - Present</span>
+                </div>
+                <div class="experience-location">📍 Dhaka, Bangladesh</div>
+                <ul class="experience-description">
+                    <li>Organized national programming contests and workshops</li>
+                    <li>Created impactful content and promotional materials for events and social media</li>
+                    <li>Acted as liaison between student teams, university administration, and sponsors</li>
+                    <li>Maintained schedules, tracked progress, and ensured smooth execution of multi-day events</li>
+                </ul>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Career Goals</h2>
-            <p>I'm currently focused on building a strong foundation in web development and machine learning, aiming to combine both skills in real-world projects that create meaningful impact. With a particular passion for backend development, I am strongly committed to mastering Java and Spring Framework as the core tools of my web development journey. I believe Spring's robust ecosystem perfectly aligns with scalable, secure, and enterprise-level application development. Alongside this, I'm exploring content creation as a hobby and planning to publish research papers to contribute academically and stay at the forefront of technological advancement.</p>
+            <h2>Skills</h2>
+            <div class="skills-section">
+                <div class="skill-category">
+                    <h3>Technical Expertise</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">C</span>
+                        <span class="skill-item">Spring Boot</span>
+                        <span class="skill-item">HTML/CSS</span>
+                        <span class="skill-item">Bootstrap</span>
+                        <span class="skill-item">H2 Database</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Development Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">VS Code</span>
+                        <span class="skill-item">IntelliJ IDEA</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">GitHub</span>
+                        <span class="skill-item">GCC</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Creative & Media</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Canva</span>
+                        <span class="skill-item">CapCut</span>
+                        <span class="skill-item">DaVinci Resolve</span>
+                        <span class="skill-item">Google Sites</span>
+                        <span class="skill-item">Content Creation</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Productivity Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Google Workspace</span>
+                        <span class="skill-item">MS Office Suite</span>
+                        <span class="skill-item">Trello</span>
+                        <span class="skill-item">Notion</span>
+                        <span class="skill-item">Google Calendar</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Event Management</span>
+                        <span class="skill-item">Team Leadership</span>
+                        <span class="skill-item">Project Management</span>
+                        <span class="skill-item">Communication</span>
+                        <span class="skill-item">Problem Solving</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Time Management</span>
+                        <span class="skill-item">Multitasking</span>
+                        <span class="skill-item">Adaptability</span>
+                        <span class="skill-item">Team Collaboration</span>
+                        <span class="skill-item">Continuous Learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <strong>ScholarMate – Scholarship Management System</strong>
+                <p>Sept 2023 | Tools: Flask, SQLite, HTML/CSS, Bootstrap</p>
+                <p>Built a web application for managing scholarship opportunities with deadline alerts and bookmarking features. Implemented user authentication and responsive design for seamless access across devices.</p>
+                <div class="project-links">
+                    <a href="https://github.com/tarequejosh/scholar-mate" class="project-link">GitHub Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <strong>VocabSmart – English Vocabulary Tutor</strong>
+                <p>Sept 2023 | Tools: C, VS Code</p>
+                <p>Built a terminal-based vocabulary app using spaced repetition and Pomodoro technique. Managed development timeline and team coordination.</p>
+                <div class="project-links">
+                    <a href="https://sites.google.com/diu.edu.bd/mightymaverics/thoughts" class="project-link">Project Site</a>
+                    <a href="https://github.com/tarequejosh/vocab-smart" class="project-link">GitHub Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <strong>Task Management System – Web App</strong>
+                <p>Oct 2024 (Ongoing) | Tools: Java, Spring Boot, H2, Bootstrap</p>
+                <p>Currently building a user-friendly task organizer with authentication and CRUD features. Managing deadlines and collaborating using GitHub.</p>
+                <div class="project-links">
+                    <a href="https://github.com/tarequejosh/task-management-system" class="project-link">GitHub Repository</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Achievements</h2>
+            <div class="achievement-item">
+                <div class="achievement-title">Unlock The Algorithm – Spring 2024 Contest</div>
+                <div class="achievement-detail">C Slot – Secured 25th position among university-level participants</div>
+            </div>
         </div>
 
         <div class="section">
             <h2>Certifications</h2>
-            <p><strong>CS50x: Introduction to Computer Science (edX)</strong><br>
-            Covered C, Python, and deep foundational CS knowledge</p>
-        </div>
-
-        <div class="section">
-            <h2>Contests</h2>
-            <p>Unlock The Algorithm Spring 2024, C Slot &ndash; 25th Position</p>
+            <div class="achievement-item">
+                <div class="achievement-title">CS50x: Introduction to Computer Science – Harvard/edX</div>
+                <div class="achievement-detail">Strong foundation in structured problem solving and programming logic</div>
+            </div>
         </div>
     </div>
 </body>
